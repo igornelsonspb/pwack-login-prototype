@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вход — Заливы траффика</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "three": "https://esm.sh/three@0.160.0",
+    "postprocessing": "https://esm.sh/postprocessing@6.35.4?external=three",
+    "face-api.js": "https://esm.sh/face-api.js@0.22.2"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="stage">
+  <div class="login-frame">
+
+    <!-- LEFT: GridScan animation (react-bits), fills the whole panel -->
+    <div class="login-visual">
+      <div id="gridscan-root" class="gridscan-root"></div>
+      <img src="assets/logonew.png" alt="Click Kings Apps" class="visual-logo">
+    </div>
+
+    <!-- RIGHT: form -->
+    <div class="login-panel">
+      <div class="login-content">
+
+        <h1 class="login-title">Вход в личный кабинет</h1>
+
+        <form class="login-form" id="loginForm" novalidate>
+
+          <div class="field" id="emailField">
+            <div class="field-title-row">
+              <label class="field-title" for="email">Почта<span class="required-mark">*</span></label>
+            </div>
+            <div class="field-box">
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+            </div>
+            <div class="field-error" id="emailError">Введите корректный email</div>
+          </div>
+
+          <div class="field" id="passwordField">
+            <div class="field-title-row">
+              <label class="field-title" for="password">Пароль</label>
+              <a href="#" class="field-link">Забыли пароль?</a>
+            </div>
+            <div class="field-box">
+              <input type="password" id="password" name="password" placeholder="Введите пароль" autocomplete="current-password">
+              <button type="button" class="field-icon-btn" id="togglePassword" aria-label="Показать пароль">
+                <span class="icon-eye" id="eyeIcon"></span>
+              </button>
+            </div>
+            <div class="field-error" id="passwordError">Введите пароль</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary-large">Войти</button>
+
+          <div class="divider"><span>или</span></div>
+
+          <button type="button" class="btn btn-secondary-large" id="googleBtn">
+            <span class="icon-google"></span>
+            Войти через Google
+          </button>
+
+        </form>
+
+        <p class="signup-row">Нет аккаунта? <a href="#" class="field-link">Создать аккаунт</a></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<script type="text/babel" data-type="module" data-presets="react" src="assets/js/gridscan-mount.jsx"></script>
+<script src="login.js"></script>
+</body>
+</html>
