@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вход — Заливы траффика (LiquidEther)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login2.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "three": "https://esm.sh/three@0.160.0"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- Fullscreen LiquidEther animation (react-bits) -->
+  <div id="liquidether-root" class="liquidether-root"></div>
+
+  <!-- Centered login card -->
+  <div class="login-card">
+    <img src="assets/logonew.png" alt="Click Kings Apps" class="card-logo">
+
+    <h1 class="login-title">Вход в личный кабинет</h1>
+
+    <form class="login-form" id="loginForm" novalidate>
+
+      <div class="field" id="emailField">
+        <div class="field-title-row">
+          <label class="field-title" for="email">Почта<span class="required-mark">*</span></label>
+        </div>
+        <div class="field-box">
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field-error" id="emailError">Введите корректный email</div>
+      </div>
+
+      <div class="field" id="passwordField">
+        <div class="field-title-row">
+          <label class="field-title" for="password">Пароль</label>
+        </div>
+        <div class="field-box">
+          <input type="password" id="password" name="password" placeholder="Введите пароль" autocomplete="current-password">
+          <button type="button" class="field-icon-btn" id="togglePassword" aria-label="Показать пароль">
+            <span class="icon-eye" id="eyeIcon"></span>
+          </button>
+        </div>
+        <div class="field-error" id="passwordError">Введите пароль</div>
+      </div>
+
+      <a href="#" class="field-link forgot-link">Забыли пароль?</a>
+
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary-large">Войти</button>
+
+        <button type="button" class="btn btn-secondary-large" id="googleBtn">
+          <span class="icon-google"></span>
+          Авторизация через Google
+        </button>
+      </div>
+
+    </form>
+
+    <p class="signup-row">Нет аккаунта? <a href="#" class="field-link">Создать аккаунт</a></p>
+
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<script type="text/babel" data-type="module" data-presets="react" src="assets/js/liquidether-mount.jsx"></script>
+<script src="login.js"></script>
+</body>
+</html>
