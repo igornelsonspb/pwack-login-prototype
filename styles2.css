@@ -16,11 +16,8 @@
 .card-gradient {
   background:
     radial-gradient(65% 140% at 0% 0%,
-      #3EFE90 0%,
-      #38C97C 12%,
-      #329467 22%,
-      #2C5F53 34%,
-      #294548 46%,
+      #2E775B 0%,
+      #2A5347 30%,
       #262A3E 60%);
 }
 
@@ -171,6 +168,7 @@
 
 /* ---------- CARD 2: detail + notifications + stats ---------- */
 .card-detail {
+  --green: #2E775B; /* muted accent for this card only, per feedback */
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -196,7 +194,7 @@
   gap: 8px;
   height: 42px;
   padding: 12px 16px;
-  background: rgba(62, 254, 144, 0.14);
+  background: rgba(46, 119, 91, 0.18);
   border-radius: 8px;
   color: var(--green);
   font-size: 14px;
@@ -212,7 +210,7 @@
   background: var(--green);
   border: none;
   border-radius: 8px;
-  color: #000000;
+  color: #FFFFFF;
   font-size: 14px;
   font-weight: 500;
   font-family: inherit;
