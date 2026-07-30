@@ -121,19 +121,42 @@
   100% { transform: translateY(-400%); }
 }
 
-.progress-stripe {
-  position: relative;
+/* flowing line animation (inspired by aura.build/component/5A382DB) */
+.line-wave {
   height: 32px;
   width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-  background: repeating-linear-gradient(-45deg, #2B3347 0 14px, #232840 14px 28px);
 }
-.progress-stripe-fill {
-  position: absolute;
-  inset: 0;
+.line-wave svg {
+  width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(-45deg, #3EFE90 0 14px, #30D67D 14px 28px);
+  display: block;
+}
+
+.line-wave-path {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(62, 254, 144, 0.8));
+  stroke-dasharray: 120 400;
+  animation: line-wave-flow 3s linear infinite;
+}
+
+.line-wave-path-2 {
+  stroke-width: 1.5;
+  opacity: 0.55;
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+.line-wave-path-3 {
+  stroke-width: 1;
+  opacity: 0.3;
+  animation-duration: 5s;
+}
+
+@keyframes line-wave-flow {
+  to { stroke-dashoffset: -520; }
 }
 
 /* ---------- CARD 2: detail + notifications + stats ---------- */
