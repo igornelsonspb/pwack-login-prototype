@@ -5,10 +5,15 @@
   height: 42.84px;
 }
 
-/* ---------- shared "highlight" card shell (radial green→dark gradient) ---------- */
+/* ---------- shared "highlight" card shell ---------- */
 .card-highlight {
   border-radius: 24px;
   padding: 24px;
+  background: var(--bg-card);
+}
+
+/* applied only to the detail card (card 2) — card 1 stays flat per feedback */
+.card-gradient {
   background:
     radial-gradient(65% 140% at 0% 0%,
       #3EFE90 0%,
@@ -70,11 +75,51 @@
 
 .stage-label {
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 18px;
   font-weight: 700;
   color: var(--text-primary);
 }
-.stage-value { color: var(--green); }
+
+/* text-switch loader effect (adapted from uiverse.io/kennyotsu/fresh-lizard-20) */
+.stage-loader {
+  display: flex;
+  height: 24px;
+  overflow: hidden;
+}
+
+.stage-words {
+  overflow: hidden;
+  position: relative;
+}
+.stage-words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--bg-card) 10%, transparent 30%, transparent 70%, var(--bg-card) 90%);
+  z-index: 2;
+}
+
+.stage-word {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  color: var(--green);
+  animation: stage-word-spin 6s infinite;
+}
+
+@keyframes stage-word-spin {
+  10%  { transform: translateY(-102%); }
+  25%  { transform: translateY(-100%); }
+  35%  { transform: translateY(-202%); }
+  50%  { transform: translateY(-200%); }
+  60%  { transform: translateY(-302%); }
+  75%  { transform: translateY(-300%); }
+  85%  { transform: translateY(-402%); }
+  100% { transform: translateY(-400%); }
+}
 
 .progress-stripe {
   position: relative;
