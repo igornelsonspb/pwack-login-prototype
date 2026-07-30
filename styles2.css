@@ -1,0 +1,295 @@
+/* ---------- variant 2: extends styles.css with new highlight card styles ---------- */
+
+.logo-png {
+  width: 102px;
+  height: 42.84px;
+}
+
+/* ---------- shared "highlight" card shell (radial green→dark gradient) ---------- */
+.card-highlight {
+  border-radius: 24px;
+  padding: 24px;
+  background:
+    radial-gradient(65% 140% at 0% 0%,
+      #3EFE90 0%,
+      #38C97C 12%,
+      #329467 22%,
+      #2C5F53 34%,
+      #294548 46%,
+      #262A3E 60%);
+}
+
+.card-highlight-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-highlight-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subdomain-item-lg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.subdomain-item-lg img { width: 24px; height: 24px; }
+.subdomain-item-lg span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.geo-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-left: 16px;
+}
+
+.card-highlight .subdomain-label {
+  gap: 16px;
+}
+
+/* ---------- CARD 1: test-stage progress ---------- */
+.card-test {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card-test-progress-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stage-label {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.stage-value { color: var(--green); }
+
+.progress-stripe {
+  position: relative;
+  height: 32px;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  background: repeating-linear-gradient(-45deg, #2B3347 0 14px, #232840 14px 28px);
+}
+.progress-stripe-fill {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background: repeating-linear-gradient(-45deg, #3EFE90 0 14px, #30D67D 14px 28px);
+}
+
+/* ---------- CARD 2: detail + notifications + stats ---------- */
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-detail-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-pill-ok {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 12px 16px;
+  background: rgba(62, 254, 144, 0.14);
+  border-radius: 8px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.metric-pill-ok img { width: 16px; height: 16px; }
+
+.btn-primary-pill {
+  width: 154px;
+  height: 42px;
+  padding: 12px 16px;
+  background: var(--green);
+  border: none;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.card-detail-body {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+/* notifications panel */
+.notif-panel {
+  position: relative;
+  flex: 1 0 0;
+  height: 326px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: rgba(153, 202, 174, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.notif-header img { width: 24px; height: 24px; }
+
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-end;
+  height: 237px;
+  overflow: hidden;
+  padding-right: 12px;
+}
+
+.notif-item {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0 12px 12px 12px;
+}
+
+.notif-item-latest {
+  background: rgba(153, 202, 174, 0.14);
+}
+
+.notif-text {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.notif-item-latest .notif-text { color: var(--text-primary); }
+
+.notif-date {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.notif-scrollbar {
+  position: absolute;
+  right: 12px;
+  top: 89px;
+  width: 4px;
+  height: 237px;
+  border-radius: 20px;
+  background: #2b333e;
+}
+.notif-scrollbar-thumb {
+  position: absolute;
+  top: 168px;
+  width: 4px;
+  height: 69px;
+  border-radius: 20px;
+  background: #43535b;
+}
+
+/* stats grid */
+.stats-grid {
+  flex: 1 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  height: 326px;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: #36404D;
+  border-radius: 12px;
+}
+
+.stat-tile-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.stat-tile-top span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.stat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 45%;
+}
+
+.stat-tile-data {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stat-value {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 0.9;
+  color: var(--text-primary);
+}
+.stat-delta {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--green);
+}
+
+@media (max-width: 900px) {
+  .card-detail-body { flex-direction: column; }
+  .stats-grid { grid-template-columns: 1fr 1fr; height: auto; }
+  .notif-panel { height: auto; }
+}
