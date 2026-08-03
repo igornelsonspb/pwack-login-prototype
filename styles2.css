@@ -39,7 +39,7 @@
   align-items: center;
   gap: 8px;
 }
-.subdomain-item-lg img { width: 24px; height: 24px; }
+.subdomain-item-lg img { width: 16px; height: 16px; }
 .subdomain-item-lg span {
   font-size: 14px;
   font-weight: 500;
