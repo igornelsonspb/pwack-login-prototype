@@ -250,9 +250,12 @@
   gap: 8px;
   justify-content: flex-start;
   height: 237px;
-  overflow: hidden;
+  overflow-y: auto;
   padding-right: 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.notif-list::-webkit-scrollbar { display: none; }
 
 .notif-item {
   padding: 12px;
@@ -293,11 +296,12 @@
 }
 .notif-scrollbar-thumb {
   position: absolute;
-  top: 168px;
+  top: 0;
   width: 4px;
   height: 69px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.2);
+  transition: top 0.1s linear;
 }
 
 /* stats grid */
