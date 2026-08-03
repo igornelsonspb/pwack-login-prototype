@@ -230,7 +230,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -314,7 +314,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
 }
 
