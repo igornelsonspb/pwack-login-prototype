@@ -5,6 +5,10 @@
   height: 42.84px;
 }
 
+.menu-btn.active {
+  border-color: #6D718A;
+}
+
 /* ---------- fixed layout: sidebar/header/filters stay put, only cards scroll ---------- */
 html, body {
   overflow: hidden;
