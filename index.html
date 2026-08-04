@@ -3,86 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Вход — Заливы траффика</title>
+<title>Заливы траффика — дашборд</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="login.css">
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.3.1",
-    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
-    "three": "https://esm.sh/three@0.160.0",
-    "postprocessing": "https://esm.sh/postprocessing@6.35.4?external=three",
-    "face-api.js": "https://esm.sh/face-api.js@0.22.2"
-  }
-}
-</script>
+<link rel="stylesheet" href="styles.css">
+<script src="assets/js/lottie.min.js"></script>
+<script src="assets/lottie/arrow-data.js"></script>
 </head>
 <body>
 
-<div class="stage">
-  <div class="login-frame">
+<div class="app">
 
-    <!-- LEFT: GridScan animation (react-bits), fills the whole panel -->
-    <div class="login-visual">
-      <div id="gridscan-root" class="gridscan-root"></div>
-      <img src="assets/logonew.png" alt="Click Kings Apps" class="visual-logo">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <button class="icon-btn" aria-label="Свернуть меню">
+        <img src="assets/icons/icon-chevron.svg" alt="">
+      </button>
+      <img src="assets/icons/logo.svg" alt="Logo" class="logo">
     </div>
 
-    <!-- RIGHT: form -->
-    <div class="login-panel">
-      <div class="login-content">
+    <nav class="menu">
+      <div class="menu-items">
+        <a href="#" class="menu-btn active" data-nav="telemetria">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-telemetria.svg" alt="">
+            <span>Telemetria</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="pwa">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-pwa.svg" alt="">
+            <span>PWA</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="ios">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-ios.svg" alt="">
+            <span>iOS</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="flows">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-flows.svg" alt="">
+            <span>Потоки</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="push">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-push.svg" alt="">
+            <span>Пуши</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="statistic">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-statistic.svg" alt="">
+            <span>Статистика</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="wallet">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-wallet.svg" alt="">
+            <span>Финансы</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn soon" data-nav="news">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-news.svg" alt="">
+            <span>Новости</span>
+          </span>
+          <img class="soon-badge" src="assets/icons/icon-soon.svg?v=2" alt="soon">
+        </a>
+        <a href="#" class="menu-btn soon" data-nav="referral">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-referral.svg" alt="">
+            <span>Реферальная программа</span>
+          </span>
+          <img class="soon-badge" src="assets/icons/icon-soon.svg?v=2" alt="soon">
+        </a>
+        <a href="#" class="menu-btn" data-nav="users">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-users.svg" alt="">
+            <span>Пользователи</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="domain">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-domain.svg" alt="">
+            <span>Домены</span>
+          </span>
+        </a>
+      </div>
 
-        <h1 class="login-title">Вход в личный кабинет</h1>
+      <a href="#" class="menu-btn" data-nav="support">
+        <span class="menu-btn-left">
+          <img src="assets/icons/icon-support.svg" alt="">
+          <span>Поддержка</span>
+        </span>
+      </a>
+    </nav>
+  </aside>
 
-        <form class="login-form" id="loginForm" novalidate>
+  <!-- MAIN -->
+  <div class="main">
+    <header class="main-header">
+      <h1>Заливы траффика</h1>
+      <div class="header-right">
+        <span class="balance">$0</span>
+        <div class="profile">
+          <span>Nick</span>
+          <img src="assets/icons/icon-person.svg" alt="">
+        </div>
+      </div>
+    </header>
 
-          <div class="field" id="emailField">
-            <div class="field-title-row">
-              <label class="field-title" for="email">Почта<span class="required-mark">*</span></label>
-            </div>
-            <div class="field-box">
-              <input type="email" id="email" name="email" placeholder="Введите почту" autocomplete="email">
-            </div>
-            <div class="field-error" id="emailError">Введите корректный email</div>
+    <div class="content">
+      <div class="container">
+
+        <!-- TABS + SEARCH -->
+        <div class="tab-container">
+          <div class="tabs-row">
+            <div class="tabs" id="tabs"></div>
+            <button class="notification-pill" id="notificationPill">
+              <img src="assets/icons/icon-bell.svg" alt="">
+              <span id="notificationText">Новых уведомлений 5</span>
+            </button>
           </div>
 
-          <div class="field" id="passwordField">
-            <div class="field-title-row">
-              <label class="field-title" for="password">Пароль</label>
-              <a href="#" class="field-link">Забыли пароль?</a>
+          <div class="filters-row">
+            <div class="input-wrap search-wrap">
+              <img src="assets/icons/icon-search.svg" alt="">
+              <input type="text" id="searchInput" placeholder="По домену потоку приложению">
             </div>
-            <div class="field-box">
-              <input type="password" id="password" name="password" placeholder="Введите пароль" autocomplete="current-password">
-              <button type="button" class="field-icon-btn" id="togglePassword" aria-label="Показать пароль">
-                <span class="icon-eye" id="eyeIcon"></span>
-              </button>
+            <div class="input-wrap dropdown-wrap" id="periodDropdown">
+              <span id="periodLabel">Период обновления 5 мин</span>
+              <img src="assets/icons/icon-chevron.svg" alt="">
+              <div class="dropdown-menu" id="periodMenu">
+                <div class="dropdown-item" data-minutes="1">1 мин</div>
+                <div class="dropdown-item" data-minutes="5">5 мин</div>
+                <div class="dropdown-item" data-minutes="15">15 мин</div>
+                <div class="dropdown-item" data-minutes="30">30 мин</div>
+              </div>
             </div>
-            <div class="field-error" id="passwordError">Введите пароль</div>
           </div>
+          <p class="demo-note">Демо-режим: 1 минута реального обновления симулируется за 1 секунду (ускорение ×60)</p>
+        </div>
 
-          <button type="submit" class="btn btn-primary-large">Войти</button>
-
-          <div class="divider"><span>или</span></div>
-
-          <button type="button" class="btn btn-secondary-large" id="googleBtn">
-            <span class="icon-google"></span>
-            Войти через Google
-          </button>
-
-        </form>
-
-        <p class="signup-row">Нет аккаунта? <a href="#" class="field-link">Создать аккаунт</a></p>
+        <!-- CARDS -->
+        <div class="item-container" id="cardsList"></div>
 
       </div>
     </div>
-
   </div>
 </div>
 
-<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
-<script type="text/babel" data-type="module" data-presets="react" src="assets/js/gridscan-mount.jsx"></script>
-<script src="login.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
