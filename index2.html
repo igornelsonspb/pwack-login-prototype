@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="styles2.css?v=12">
+<link rel="stylesheet" href="styles2.css?v=13">
 </head>
 <body>
 
@@ -116,37 +116,37 @@
       </div>
     </header>
 
-    <div class="content">
-      <div class="container">
+    <!-- TABS + SEARCH (fixed, outside the scrolling area) -->
+    <div class="tab-container">
+      <div class="tabs-row">
+        <div class="tabs" id="tabs">
+          <button class="tab-btn active">Все (20)</button>
+          <button class="tab-btn">Активные (6)</button>
+          <button class="tab-btn">Неактивные (12)</button>
+          <button class="tab-btn">Завершенные (2)</button>
+        </div>
+      </div>
 
-        <!-- TABS + SEARCH -->
-        <div class="tab-container">
-          <div class="tabs-row">
-            <div class="tabs" id="tabs">
-              <button class="tab-btn active">Все (20)</button>
-              <button class="tab-btn">Активные (6)</button>
-              <button class="tab-btn">Неактивные (12)</button>
-              <button class="tab-btn">Завершенные (2)</button>
-            </div>
-          </div>
-
-          <div class="filters-row">
-            <div class="input-wrap search-wrap">
-              <img src="assets/icons/icon-search.svg" alt="">
-              <input type="text" id="searchInput" placeholder="По домену потоку приложению">
-            </div>
-            <div class="input-wrap dropdown-wrap" id="periodDropdown">
-              <span id="periodLabel">Период обновления 5 мин</span>
-              <img src="assets/icons/icon-chevron.svg" alt="">
-              <div class="dropdown-menu" id="periodMenu">
-                <div class="dropdown-item" data-minutes="1">1 мин</div>
-                <div class="dropdown-item" data-minutes="5">5 мин</div>
-                <div class="dropdown-item" data-minutes="15">15 мин</div>
-                <div class="dropdown-item" data-minutes="30">30 мин</div>
-              </div>
-            </div>
+      <div class="filters-row">
+        <div class="input-wrap search-wrap">
+          <img src="assets/icons/icon-search.svg" alt="">
+          <input type="text" id="searchInput" placeholder="По домену потоку приложению">
+        </div>
+        <div class="input-wrap dropdown-wrap" id="periodDropdown">
+          <span id="periodLabel">Период обновления 5 мин</span>
+          <img src="assets/icons/icon-chevron.svg" alt="">
+          <div class="dropdown-menu" id="periodMenu">
+            <div class="dropdown-item" data-minutes="1">1 мин</div>
+            <div class="dropdown-item" data-minutes="5">5 мин</div>
+            <div class="dropdown-item" data-minutes="15">15 мин</div>
+            <div class="dropdown-item" data-minutes="30">30 мин</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="container">
 
         <!-- CARDS -->
         <div class="item-container">

@@ -18,18 +18,19 @@ html, body {
   overflow: hidden;
 }
 .menu {
-  overflow-y: auto;
+  overflow: hidden;
 }
 .content {
-  height: 100%;
+  flex: 1;
+  height: auto;
+  padding-top: 0;
   overflow-y: auto;
 }
 .tab-container {
-  position: sticky;
-  top: 0;
-  z-index: 5;
+  flex-shrink: 0;
+  max-width: 1200px;
   background: var(--bg-deep);
-  padding-bottom: 8px;
+  padding: 16px 40px 8px;
 }
 
 /* ---------- shared "highlight" card shell ---------- */
