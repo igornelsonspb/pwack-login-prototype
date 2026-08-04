@@ -9,6 +9,10 @@
   border-color: #6D718A;
 }
 
+.dropdown-wrap {
+  max-width: none;
+}
+
 /* ---------- fixed layout: sidebar/header/filters stay put, only cards scroll ---------- */
 html, body {
   overflow: hidden;
@@ -27,12 +31,11 @@ html, body {
 .content {
   flex: 1;
   height: auto;
-  padding-top: 0;
+  padding-top: 16px;
   overflow-y: auto;
 }
 .tab-container {
   flex-shrink: 0;
-  max-width: 1200px;
   background: var(--bg-deep);
   padding: 16px 40px 8px;
 }
