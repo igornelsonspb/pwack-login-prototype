@@ -26,35 +26,34 @@ document.addEventListener('click', e => {
   if (!periodDropdown.contains(e.target)) periodDropdown.classList.remove('open');
 });
 
-// ---------- notifications: custom scrollbar synced to real scroll ----------
-const notifList = document.querySelector('.notif-list');
-const notifTrack = document.querySelector('.notif-scrollbar');
-const notifThumb = document.querySelector('.notif-scrollbar-thumb');
-
-function updateNotifThumb() {
+// ---------- notifications: custom scrollbar synced to real scroll (supports multiple cards) ----------
+document.querySelectorAll('.notif-list-wrap').forEach(wrap => {
+  const notifList = wrap.querySelector('.notif-list');
+  const notifTrack = wrap.querySelector('.notif-scrollbar');
+  const notifThumb = wrap.querySelector('.notif-scrollbar-thumb');
   if (!notifList || !notifTrack || !notifThumb) return;
 
-  const trackHeight = notifTrack.clientHeight;
-  const contentHeight = notifList.scrollHeight;
-  const visibleHeight = notifList.clientHeight;
-  const maxScroll = contentHeight - visibleHeight;
+  function updateNotifThumb() {
+    const trackHeight = notifTrack.clientHeight;
+    const contentHeight = notifList.scrollHeight;
+    const visibleHeight = notifList.clientHeight;
+    const maxScroll = contentHeight - visibleHeight;
 
-  if (maxScroll <= 0) {
-    notifThumb.style.height = trackHeight + 'px';
-    notifThumb.style.top = '0px';
-    return;
+    if (maxScroll <= 0) {
+      notifThumb.style.height = trackHeight + 'px';
+      notifThumb.style.top = '0px';
+      return;
+    }
+
+    const thumbHeight = Math.max((visibleHeight / contentHeight) * trackHeight, 20);
+    const maxThumbTop = trackHeight - thumbHeight;
+    const scrollRatio = notifList.scrollTop / maxScroll;
+
+    notifThumb.style.height = thumbHeight + 'px';
+    notifThumb.style.top = (scrollRatio * maxThumbTop) + 'px';
   }
 
-  const thumbHeight = Math.max((visibleHeight / contentHeight) * trackHeight, 20);
-  const maxThumbTop = trackHeight - thumbHeight;
-  const scrollRatio = notifList.scrollTop / maxScroll;
-
-  notifThumb.style.height = thumbHeight + 'px';
-  notifThumb.style.top = (scrollRatio * maxThumbTop) + 'px';
-}
-
-if (notifList) {
   notifList.addEventListener('scroll', updateNotifThumb);
   window.addEventListener('resize', updateNotifThumb);
   updateNotifThumb();
-}
+});

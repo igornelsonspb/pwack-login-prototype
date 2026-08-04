@@ -5,6 +5,33 @@
   height: 42.84px;
 }
 
+/* ---------- fixed layout: sidebar/header/filters stay put, only cards scroll ---------- */
+html, body {
+  overflow: hidden;
+}
+.app {
+  height: 100vh;
+  min-height: 100vh;
+}
+.main {
+  height: 100vh;
+  overflow: hidden;
+}
+.menu {
+  overflow-y: auto;
+}
+.content {
+  height: 100%;
+  overflow-y: auto;
+}
+.tab-container {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg-deep);
+  padding-bottom: 8px;
+}
+
 /* ---------- shared "highlight" card shell ---------- */
 .card-highlight {
   border-radius: 24px;
@@ -18,6 +45,15 @@
     radial-gradient(65% 140% at 0% 0%,
       #2E775B 0%,
       #2A514D 50%,
+      #262A3E 100%);
+}
+
+/* warning state (card 3) — metric problem, gradient replaced with warm/amber tones */
+.card-warning {
+  background:
+    radial-gradient(65% 140% at 0% 0%,
+      #725B2F 0%,
+      #4C4337 50%,
       #262A3E 100%);
 }
 
@@ -201,6 +237,20 @@
 }
 .metric-pill-ok img { width: 16px; height: 16px; }
 
+.metric-pill-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: rgba(255, 187, 0, 0.14);
+  border-radius: 8px;
+  color: var(--yellow);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.metric-pill-warning img { width: 16px; height: 16px; }
+
 .btn-secondary-stat {
   padding: 9px 16px;
   background: var(--bg-card);
@@ -370,6 +420,14 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--green);
+}
+.stat-delta-warning {
+  color: var(--yellow);
+}
+
+/* warning card: dimmer highlighted notification, per Figma */
+.card-warning .notif-item-latest {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 @media (max-width: 900px) {
