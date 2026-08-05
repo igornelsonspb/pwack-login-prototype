@@ -110,13 +110,13 @@ html, body {
   gap: 40px;
 }
 
-/* ripple animation badge, top-right corner (from Figma "animate" placeholder) */
+/* ripple animation badge, top-right corner (from Figma "animate" placeholder) — scaled to full card height, kept square */
 .ripple-badge {
   position: absolute;
   top: 24px;
   right: 24px;
-  width: 120px;
-  height: 120px;
+  bottom: 24px;
+  aspect-ratio: 1 / 1;
   pointer-events: none;
 }
 .ripple-badge-img {
