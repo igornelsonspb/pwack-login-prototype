@@ -57,3 +57,11 @@ document.querySelectorAll('.notif-list-wrap').forEach(wrap => {
   window.addEventListener('resize', updateNotifThumb);
   updateNotifThumb();
 });
+
+// ---------- ripple animation: replay every 5s (SVG plays once, ~4.88s at 2x slower speed) ----------
+document.querySelectorAll('[data-ripple]').forEach(img => {
+  const src = img.getAttribute('src');
+  setInterval(() => {
+    img.src = src + '?t=' + Date.now();
+  }, 5000);
+});
