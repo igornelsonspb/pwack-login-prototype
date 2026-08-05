@@ -9,6 +9,10 @@
   border-color: #6D718A;
 }
 
+.container {
+  max-width: none;
+}
+
 .dropdown-wrap {
   max-width: none;
 }
