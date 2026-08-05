@@ -1,0 +1,447 @@
+/* ---------- variant 2: extends styles.css with new highlight card styles ---------- */
+
+.logo-png {
+  width: 102px;
+  height: 42.84px;
+}
+
+.menu-btn.active {
+  border-color: #6D718A;
+}
+
+.dropdown-wrap {
+  max-width: none;
+}
+
+/* ---------- fixed layout: sidebar/header/filters stay put, only cards scroll ---------- */
+html, body {
+  overflow: hidden;
+}
+.app {
+  height: 100vh;
+  min-height: 100vh;
+}
+.main {
+  height: 100vh;
+  overflow: hidden;
+}
+.menu {
+  overflow: hidden;
+}
+.content {
+  flex: 1;
+  height: auto;
+  padding-top: 16px;
+  overflow-y: auto;
+}
+.tab-container {
+  flex-shrink: 0;
+  background: var(--bg-deep);
+  padding: 16px 40px 8px;
+}
+
+/* ---------- shared "highlight" card shell ---------- */
+.card-highlight {
+  border-radius: 24px;
+  padding: 24px;
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+/* applied only to the detail card (card 2) — card 1 stays flat per feedback */
+.card-gradient {
+  background:
+    radial-gradient(65% 140% at 0% 0%,
+      #2E775B 0%,
+      #2A514D 50%,
+      #262A3E 100%);
+}
+
+/* warning state (card 3) — metric problem, gradient replaced with warm/amber tones */
+.card-warning {
+  background:
+    radial-gradient(65% 140% at 0% 0%,
+      #725B2F 0%,
+      #4C4337 50%,
+      #262A3E 100%);
+}
+
+.card-highlight-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-highlight-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subdomain-item-lg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.subdomain-item-lg img { width: 16px; height: 16px; }
+.subdomain-item-lg span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.geo-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-left: 16px;
+}
+
+.card-highlight .subdomain-label {
+  gap: 16px;
+}
+
+/* ---------- CARD 1: test-stage progress ---------- */
+.card-test {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card-test-progress-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stage-label {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* text-switch loader effect (adapted from uiverse.io/kennyotsu/fresh-lizard-20) */
+.stage-loader {
+  display: flex;
+  height: 24px;
+  overflow: hidden;
+}
+
+.stage-words {
+  overflow: hidden;
+  position: relative;
+}
+.stage-words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--bg-card) 10%, transparent 30%, transparent 70%, var(--bg-card) 90%);
+  z-index: 2;
+}
+
+.stage-word {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  color: var(--green);
+  animation: stage-word-spin 6s infinite;
+}
+
+@keyframes stage-word-spin {
+  10%  { transform: translateY(-102%); }
+  25%  { transform: translateY(-100%); }
+  35%  { transform: translateY(-202%); }
+  50%  { transform: translateY(-200%); }
+  60%  { transform: translateY(-302%); }
+  75%  { transform: translateY(-300%); }
+  85%  { transform: translateY(-402%); }
+  100% { transform: translateY(-400%); }
+}
+
+/* flowing line animation (inspired by aura.build/component/5A382DB) */
+.line-wave {
+  height: 32px;
+  width: calc(100% + 48px);
+  margin: 0 -24px;
+}
+.line-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* always-visible long line spanning the full block */
+.line-wave-base {
+  fill: none;
+  stroke: rgba(62, 254, 144, 0.25);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* bright highlight travelling along the same path, on top of the base line */
+.line-wave-glow {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 180 1000;
+  filter: drop-shadow(0 0 6px rgba(62, 254, 144, 0.9));
+  animation: line-wave-sweep 3s linear infinite;
+}
+
+.line-wave-2 { stroke-width: 1.5; }
+.line-wave-3 { stroke-width: 1; }
+
+.line-wave-glow.line-wave-2 {
+  opacity: 0.55;
+  animation-duration: 4s;
+  animation-delay: -1.3s;
+}
+.line-wave-glow.line-wave-3 {
+  opacity: 0.3;
+  animation-duration: 5s;
+  animation-delay: -2.6s;
+}
+
+@keyframes line-wave-sweep {
+  to { stroke-dashoffset: -1180; }
+}
+
+/* ---------- CARD 2: detail + notifications + stats ---------- */
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-detail-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-pill-ok {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: rgba(62, 254, 144, 0.14);
+  border-radius: 8px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.metric-pill-ok img { width: 16px; height: 16px; }
+
+.metric-pill-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: rgba(255, 187, 0, 0.14);
+  border-radius: 8px;
+  color: var(--yellow);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.metric-pill-warning img { width: 16px; height: 16px; }
+
+.btn-secondary-stat {
+  padding: 9px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn-secondary-stat:hover { background: var(--bg-tab-active); }
+
+.card-detail-body {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+/* notifications panel */
+.notif-panel {
+  position: relative;
+  flex: 1 0 0;
+  height: 326px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.notif-list-wrap {
+  position: relative;
+  width: 100%;
+  height: 237px;
+}
+
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.notif-list::-webkit-scrollbar { display: none; }
+
+.notif-item {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0 12px 12px 12px;
+}
+
+.notif-item-latest {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.notif-text {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.3);
+}
+.notif-item-latest .notif-text { color: var(--text-primary); }
+
+.notif-date {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+}
+.notif-item-latest .notif-date { color: var(--text-primary); }
+
+.notif-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.notif-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 69px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: top 0.1s linear;
+}
+
+/* stats grid */
+.stats-grid {
+  flex: 1 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  height: 326px;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.stat-tile-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.stat-tile-top span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.stat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 45%;
+}
+
+.stat-tile-data {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stat-value {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 0.9;
+  color: var(--text-primary);
+}
+.stat-delta {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--green);
+}
+.stat-delta-warning {
+  color: var(--yellow);
+}
+
+/* warning card: dimmer highlighted notification, per Figma */
+.card-warning .notif-item-latest {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .card-detail-body { flex-direction: column; }
+  .stats-grid { grid-template-columns: 1fr 1fr; height: auto; }
+  .notif-panel { height: auto; }
+}

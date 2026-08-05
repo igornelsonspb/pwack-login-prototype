@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заливы траффика — дашборд (вариант 3)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles3.css?v=1">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <button class="icon-btn" aria-label="Свернуть меню">
+        <img src="assets/icons/icon-dots-vertical.svg" alt="">
+      </button>
+      <img src="assets/logo_CK.png" alt="Logo" class="logo logo-png">
+    </div>
+
+    <nav class="menu">
+      <div class="menu-items">
+        <a href="#" class="menu-btn active" data-nav="telemetria">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-telemetria.svg" alt="">
+            <span>Telemetria</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="pwa">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-pwa.svg" alt="">
+            <span>PWA</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="ios">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-ios.svg" alt="">
+            <span>iOS</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="flows">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-flows.svg" alt="">
+            <span>Потоки</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="push">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-push.svg" alt="">
+            <span>Пуши</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="statistic">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-statistic.svg" alt="">
+            <span>Статистика</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="wallet">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-wallet.svg" alt="">
+            <span>Финансы</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn soon" data-nav="news">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-news.svg" alt="">
+            <span>Новости</span>
+          </span>
+          <img class="soon-badge" src="assets/icons/icon-soon.svg?v=2" alt="soon">
+        </a>
+        <a href="#" class="menu-btn soon" data-nav="referral">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-referral.svg" alt="">
+            <span>Реферальная программа</span>
+          </span>
+          <img class="soon-badge" src="assets/icons/icon-soon.svg?v=2" alt="soon">
+        </a>
+        <a href="#" class="menu-btn" data-nav="users">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-users.svg" alt="">
+            <span>Пользователи</span>
+          </span>
+        </a>
+        <a href="#" class="menu-btn" data-nav="domain">
+          <span class="menu-btn-left">
+            <img src="assets/icons/icon-domain.svg" alt="">
+            <span>Домены</span>
+          </span>
+        </a>
+      </div>
+
+      <a href="#" class="menu-btn" data-nav="support">
+        <span class="menu-btn-left">
+          <img src="assets/icons/icon-support.svg" alt="">
+          <span>Поддержка</span>
+        </span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <header class="main-header">
+      <h1>Telemetria</h1>
+      <div class="header-right">
+        <span class="balance">$0</span>
+        <div class="profile">
+          <span>Nick</span>
+          <img src="assets/icons/icon-person.svg" alt="">
+        </div>
+      </div>
+    </header>
+
+    <!-- TABS + SEARCH (fixed, outside the scrolling area) -->
+    <div class="tab-container">
+      <div class="tabs-row">
+        <div class="tabs" id="tabs">
+          <button class="tab-btn active">Все (20)</button>
+          <button class="tab-btn">Активные (6)</button>
+          <button class="tab-btn">Неактивные (12)</button>
+          <button class="tab-btn">Завершенные (2)</button>
+        </div>
+      </div>
+
+      <div class="filters-row">
+        <div class="input-wrap search-wrap">
+          <img src="assets/icons/icon-search.svg" alt="">
+          <input type="text" id="searchInput" placeholder="По домену потоку приложению">
+        </div>
+        <div class="input-wrap dropdown-wrap" id="periodDropdown">
+          <span id="periodLabel">Период обновления 5 мин</span>
+          <img src="assets/icons/icon-chevron.svg" alt="">
+          <div class="dropdown-menu" id="periodMenu">
+            <div class="dropdown-item" data-minutes="1">1 мин</div>
+            <div class="dropdown-item" data-minutes="5">5 мин</div>
+            <div class="dropdown-item" data-minutes="15">15 мин</div>
+            <div class="dropdown-item" data-minutes="30">30 мин</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="container">
+
+        <!-- CARDS -->
+        <div class="item-container">
+
+          <!-- CARD 1: тестовый этап (progress) -->
+          <div class="card card-highlight card-test">
+            <div class="card-highlight-header">
+              <h3 class="card-highlight-title">lucky-fortune-app.com</h3>
+              <div class="subdomain-info">
+                <div class="subdomain-label">
+                  <div class="subdomain-item-lg">
+                    <img src="assets/icons/apple-icon.svg" alt="">
+                    <span>Vulkan Casino</span>
+                  </div>
+                  <div class="subdomain-item-lg">
+                    <img src="assets/icons/pwa-subtract.svg" alt="">
+                    <span>Vulkan Casino</span>
+                  </div>
+                  <span class="geo-text">GEO: UK,GB,AU,ML</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-test-progress-block">
+              <p class="stage-label">Этап:
+                <span class="stage-loader">
+                  <span class="stage-words">
+                    <span class="stage-word">зафиксирован тестовый переход</span>
+                    <span class="stage-word">этап первый прошел успешно</span>
+                    <span class="stage-word">зафиксирован тестовый инсталл</span>
+                    <span class="stage-word">все тестовые события выполнены</span>
+                    <span class="stage-word">зафиксирован тестовый переход</span>
+                  </span>
+                </span>
+              </p>
+              <div class="line-wave">
+                <svg viewBox="0 0 1087 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="line-wave-base line-wave-1" d="M0,16 Q136,2 272,16 T544,16 T816,16 T1087,16" />
+                  <path class="line-wave-base line-wave-2" d="M0,20 Q136,8 272,20 T544,20 T816,20 T1087,20" />
+                  <path class="line-wave-base line-wave-3" d="M0,12 Q136,26 272,12 T544,12 T816,12 T1087,12" />
+                  <path class="line-wave-glow line-wave-1" d="M0,16 Q136,2 272,16 T544,16 T816,16 T1087,16" />
+                  <path class="line-wave-glow line-wave-2" d="M0,20 Q136,8 272,20 T544,20 T816,20 T1087,20" />
+                  <path class="line-wave-glow line-wave-3" d="M0,12 Q136,26 272,12 T544,12 T816,12 T1087,12" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: детальная карточка со статистикой -->
+          <div class="card card-highlight card-gradient card-detail">
+            <div class="card-detail-top">
+              <div class="card-highlight-header">
+                <h3 class="card-highlight-title">Bestjoocker-wheel.com</h3>
+                <div class="subdomain-info">
+                  <div class="subdomain-label">
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/pwa-subtract.svg" alt="">
+                      <span>Royal Jocker</span>
+                    </div>
+                    <span class="geo-text">GEO: UK,GB,AU,ML</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-detail-actions">
+                <div class="metric-pill-ok">
+                  <img src="assets/icons/info-check.svg" alt="">
+                  <span>Метрика впорядке</span>
+                </div>
+                <button class="btn-secondary-stat">Подробная статистика</button>
+              </div>
+            </div>
+
+            <div class="card-detail-body">
+
+              <!-- Notifications -->
+              <div class="notif-panel">
+                <div class="notif-header">
+                  <span>Уведомления</span>
+                </div>
+                <div class="notif-list-wrap">
+                  <div class="notif-list">
+                    <div class="notif-item notif-item-latest">
+                      <p class="notif-text">Все тестовые события получены</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый инсталл</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:18</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:15</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:12</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Этап первый прошел успешно</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:10</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:07</span></div>
+                    </div>
+                  </div>
+                  <div class="notif-scrollbar">
+                    <div class="notif-scrollbar-thumb"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats grid -->
+              <div class="stats-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Клики</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">1 180</p>
+                    <p class="stat-delta">+20 с последнего обновления</p>
+                  </div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Инсталлы</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">269</p>
+                    <p class="stat-delta">+5 с последнего обновления</p>
+                  </div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Регистрации</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">180</p>
+                    <p class="stat-delta">+8 с последнего обновления</p>
+                  </div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Депозиты</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">56</p>
+                    <p class="stat-delta">+15 с последнего обновления</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 3: детальная карточка со статистикой — состояние "проблема с метрикой" -->
+          <div class="card card-highlight card-warning card-detail">
+            <div class="card-detail-top">
+              <div class="card-highlight-header">
+                <h3 class="card-highlight-title">Bestjoocker-wheel.com</h3>
+                <div class="subdomain-info">
+                  <div class="subdomain-label">
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/pwa-subtract.svg" alt="">
+                      <span>Royal Jocker</span>
+                    </div>
+                    <span class="geo-text">GEO: UK,GB,AU,ML</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-detail-actions">
+                <div class="metric-pill-warning">
+                  <img src="assets/icons/info-warning.svg" alt="">
+                  <span>Метрика ниже нормы</span>
+                </div>
+                <button class="btn-secondary-stat">Подробная статистика</button>
+              </div>
+            </div>
+
+            <div class="card-detail-body">
+
+              <!-- Notifications -->
+              <div class="notif-panel">
+                <div class="notif-header">
+                  <span>Уведомления</span>
+                </div>
+                <div class="notif-list-wrap">
+                  <div class="notif-list">
+                    <div class="notif-item notif-item-latest">
+                      <p class="notif-text">Все тестовые события получены</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                    <div class="notif-item">
+                      <p class="notif-text">Зафиксирован тестовый переход</p>
+                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
+                    </div>
+                  </div>
+                  <div class="notif-scrollbar">
+                    <div class="notif-scrollbar-thumb"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats grid -->
+              <div class="stats-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Клики</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">1 180</p>
+                    <p class="stat-delta">+20 с последнего обновления</p>
+                  </div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Инсталлы</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">0</p>
+                    <p class="stat-delta stat-delta-warning">+0 с последнего обновления</p>
+                  </div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Регистрации</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">0</p>
+                    <p class="stat-delta stat-delta-warning">+0 с последнего обновления</p>
+                  </div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-top">
+                    <span>Депозиты</span>
+                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+                  </div>
+                  <div class="stat-tile-data">
+                    <p class="stat-value">0</p>
+                    <p class="stat-delta stat-delta-warning">+0 с последнего обновления</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script3.js"></script>
+</body>
+</html>
