@@ -33,6 +33,11 @@ html, body {
   height: auto;
   padding-top: 16px;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.content::-webkit-scrollbar {
+  display: none;
 }
 .tab-container {
   flex-shrink: 0;
