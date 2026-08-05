@@ -113,9 +113,9 @@ html, body {
 /* ripple animation badge, top-right corner (from Figma "animate" placeholder) — scaled to full card height, kept square */
 .ripple-badge {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  bottom: 24px;
+  top: 0;
+  right: 0;
+  bottom: 0;
   aspect-ratio: 1 / 1;
   pointer-events: none;
 }
