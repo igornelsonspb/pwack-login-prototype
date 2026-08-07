@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="styles3.css?v=8">
+<link rel="stylesheet" href="styles3.css?v=9">
 </head>
 <body>
 
@@ -151,45 +151,71 @@
         <!-- CARDS -->
         <div class="item-container">
 
-          <!-- CARD 1: тестовый этап -->
-          <div class="card card-highlight card-test">
-            <div class="ripple-badge">
+          <!-- CARD 1: чек-лист событий + ripple-анимация -->
+          <div class="card card-highlight card-checklist">
+            <div class="checklist-left">
+              <div class="card-highlight-header">
+                <h3 class="card-highlight-title">lucky-fortune-app.com</h3>
+                <div class="subdomain-info">
+                  <div class="subdomain-label">
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/apple-icon.svg" alt="">
+                      <span>Vulkan Casino</span>
+                    </div>
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/pwa-subtract.svg" alt="">
+                      <span>Vulkan Casino</span>
+                    </div>
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/geo-pin.svg" alt="">
+                      <span>GEO: UK,GB,AU,ML</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="event-list">
+                <p class="event-list-title">Событий выполненно: 5/6</p>
+                <div class="event-row">
+                  <img src="assets/icons/check-outline.svg" alt="" class="event-row-icon">
+                  <span class="event-name">Переход по ссылке</span>
+                  <span class="event-time">12:07</span>
+                </div>
+                <div class="event-row">
+                  <img src="assets/icons/check-outline.svg" alt="" class="event-row-icon">
+                  <span class="event-name">Страница PWA открылась</span>
+                  <span class="event-time">12:07</span>
+                </div>
+                <div class="event-row">
+                  <img src="assets/icons/check-outline.svg" alt="" class="event-row-icon">
+                  <span class="event-name">Установка</span>
+                  <span class="event-time">12:10</span>
+                </div>
+                <div class="event-row">
+                  <img src="assets/icons/check-outline.svg" alt="" class="event-row-icon">
+                  <span class="event-name">Открытие приложения и редирект в трекер</span>
+                  <span class="event-time">12:24</span>
+                </div>
+                <div class="event-row">
+                  <img src="assets/icons/check-outline.svg" alt="" class="event-row-icon">
+                  <span class="event-name">Постбэк регистрации</span>
+                  <span class="event-time">12:26</span>
+                </div>
+                <div class="event-row event-row-progress">
+                  <img src="assets/icons/loading-spinner.svg" alt="" class="event-row-icon spin">
+                  <span class="event-name">Постбэк депозита</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="animate-box">
               <img src="assets/icons/ripple-animation.svg" alt="" class="ripple-badge-img" data-ripple>
             </div>
-
-            <div class="card-highlight-header">
-              <h3 class="card-highlight-title">lucky-fortune-app.com</h3>
-              <div class="subdomain-info">
-                <div class="subdomain-label">
-                  <div class="subdomain-item-lg">
-                    <img src="assets/icons/apple-icon.svg" alt="">
-                    <span>Vulkan Casino</span>
-                  </div>
-                  <div class="subdomain-item-lg">
-                    <img src="assets/icons/pwa-subtract.svg" alt="">
-                    <span>Vulkan Casino</span>
-                  </div>
-                  <span class="geo-text">GEO: UK,GB,AU,ML</span>
-                </div>
-              </div>
-            </div>
-
-            <p class="stage-label">Этап:
-              <span class="stage-loader">
-                <span class="stage-words">
-                  <span class="stage-word">зафиксирован тестовый переход</span>
-                  <span class="stage-word">этап первый прошел успешно</span>
-                  <span class="stage-word">зафиксирован тестовый инсталл</span>
-                  <span class="stage-word">все тестовые события выполнены</span>
-                  <span class="stage-word">зафиксирован тестовый переход</span>
-                </span>
-              </span>
-            </p>
           </div>
 
-          <!-- CARD 2: детальная карточка со статистикой -->
-          <div class="card card-highlight card-gradient card-detail">
-            <div class="card-detail-top">
+          <!-- CARD 2: трафик активен, метрика впорядке -->
+          <div class="card card-highlight card-gradient card-detail-v2">
+            <div class="card-v2-toprow">
               <div class="card-highlight-header">
                 <h3 class="card-highlight-title">Bestjoocker-wheel.com</h3>
                 <div class="subdomain-info">
@@ -198,122 +224,104 @@
                       <img src="assets/icons/pwa-subtract.svg" alt="">
                       <span>Royal Jocker</span>
                     </div>
-                    <span class="geo-text">GEO: UK,GB,AU,ML</span>
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/geo-pin.svg" alt="">
+                      <span>GEO: UK,GB,AU,ML</span>
+                    </div>
                   </div>
+                </div>
+                <div class="traffic-info">
+                  <span class="traffic-active">Траффик активен 46ч 22мин</span>
+                  <span class="traffic-start">Начало: 15:48 06.08.2026</span>
                 </div>
               </div>
 
-              <div class="card-detail-actions">
-                <div class="metric-pill-ok">
-                  <img src="assets/icons/info-check.svg" alt="">
-                  <span>Метрика впорядке</span>
-                </div>
+              <div class="card-v2-actions">
                 <button class="btn-secondary-stat">Подробная статистика</button>
               </div>
             </div>
 
-            <div class="card-detail-body">
+            <div class="stats-row">
+              <div class="status-panel status-panel-ok">
+                <img src="assets/icons/check-outline-green.svg" alt="" class="status-panel-icon">
+                <p class="status-panel-title">Метрика впорядке</p>
+              </div>
 
-              <!-- Notifications -->
-              <div class="notif-panel">
-                <div class="notif-header">
-                  <span>Уведомления</span>
-                </div>
-                <div class="notif-list-wrap">
-                  <div class="notif-list">
-                    <div class="notif-item notif-item-latest">
-                      <p class="notif-text">Все тестовые события получены</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый инсталл</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:18</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:15</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:12</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Этап первый прошел успешно</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:10</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:07</span></div>
-                    </div>
+              <div class="stat-col">
+                <p class="stat-col-label">Клики</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">2698</span>
+                    <span class="stat-change stat-change-ok">+20</span>
                   </div>
-                  <div class="notif-scrollbar">
-                    <div class="notif-scrollbar-thumb"></div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к PWA</span>
+                    <span class="stat-sub-value">80%</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Stats grid -->
-              <div class="stats-grid">
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Клики</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+              <div class="stat-col">
+                <p class="stat-col-label">PWA показы</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">1080</span>
+                    <span class="stat-change stat-change-ok">+25</span>
                   </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">1 180</p>
-                    <p class="stat-delta">+20 с последнего обновления</p>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Whitepage</span>
+                    <span class="stat-sub-value">20%</span>
                   </div>
-                </div>
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Инсталлы</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
-                  </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">269</p>
-                    <p class="stat-delta">+5 с последнего обновления</p>
-                  </div>
-                </div>
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Регистрации</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
-                  </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">180</p>
-                    <p class="stat-delta">+8 с последнего обновления</p>
-                  </div>
-                </div>
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Депозиты</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
-                  </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">56</p>
-                    <p class="stat-delta">+15 с последнего обновления</p>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к инсталл</span>
+                    <span class="stat-sub-value">22.8%</span>
                   </div>
                 </div>
               </div>
 
+              <div class="stat-col">
+                <p class="stat-col-label">Инсталлы</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">199</span>
+                    <span class="stat-change stat-change-ok">+12</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к регам</span>
+                    <span class="stat-sub-value">15.2%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">Регистрации</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">80</span>
+                    <span class="stat-change stat-change-ok">+7</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к дету</span>
+                    <span class="stat-sub-value">6.8%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">Депозиты</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">56</span>
+                    <span class="stat-change stat-change-ok">+2</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- CARD 3: детальная карточка со статистикой — состояние "проблема с метрикой" -->
-          <div class="card card-highlight card-warning card-detail">
-            <div class="card-detail-top">
+          <!-- CARD 3: метрика требует внимания -->
+          <div class="card card-highlight card-warning card-detail-v2">
+            <div class="card-v2-toprow">
               <div class="card-highlight-header">
                 <h3 class="card-highlight-title">Bestjoocker-wheel.com</h3>
                 <div class="subdomain-info">
@@ -322,96 +330,209 @@
                       <img src="assets/icons/pwa-subtract.svg" alt="">
                       <span>Royal Jocker</span>
                     </div>
-                    <span class="geo-text">GEO: UK,GB,AU,ML</span>
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/geo-pin.svg" alt="">
+                      <span>GEO: UK,GB,AU,ML</span>
+                    </div>
                   </div>
+                </div>
+                <div class="traffic-info">
+                  <span class="traffic-active">Траффик активен 46ч 22мин</span>
+                  <span class="traffic-start">Начало: 15:48 06.08.2026</span>
                 </div>
               </div>
 
-              <div class="card-detail-actions">
-                <div class="metric-pill-warning">
-                  <img src="assets/icons/info-warning.svg" alt="">
-                  <span>Метрика ниже нормы</span>
-                </div>
+              <div class="card-v2-actions">
                 <button class="btn-secondary-stat">Подробная статистика</button>
               </div>
             </div>
 
-            <div class="card-detail-body">
+            <div class="stats-row">
+              <div class="status-panel status-panel-warning">
+                <img src="assets/icons/info-warning.svg" alt="" class="status-panel-icon">
+                <p class="status-panel-title">Метрика требует внимания</p>
+                <p class="status-panel-text">Регистрации замедлились: 62 инсталла, 4 реги за час (норма 21)</p>
+              </div>
 
-              <!-- Notifications -->
-              <div class="notif-panel">
-                <div class="notif-header">
-                  <span>Уведомления</span>
-                </div>
-                <div class="notif-list-wrap">
-                  <div class="notif-list">
-                    <div class="notif-item notif-item-latest">
-                      <p class="notif-text">Все тестовые события получены</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
-                    <div class="notif-item">
-                      <p class="notif-text">Зафиксирован тестовый переход</p>
-                      <div class="notif-date"><span>29.07.2026</span><span>12:20</span></div>
-                    </div>
+              <div class="stat-col">
+                <p class="stat-col-label">Клики</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">1180</span>
+                    <span class="stat-change stat-change-ok">+20</span>
                   </div>
-                  <div class="notif-scrollbar">
-                    <div class="notif-scrollbar-thumb"></div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к PWA</span>
+                    <span class="stat-sub-value">80%</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Stats grid -->
-              <div class="stats-grid">
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Клики</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
+              <div class="stat-col">
+                <p class="stat-col-label">PWA показы</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">947</span>
+                    <span class="stat-change stat-change-ok">+25</span>
                   </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">1 180</p>
-                    <p class="stat-delta">+20 с последнего обновления</p>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Whitepage</span>
+                    <span class="stat-sub-value">20%</span>
                   </div>
-                </div>
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Инсталлы</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
-                  </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">0</p>
-                    <p class="stat-delta stat-delta-warning">+0 с последнего обновления</p>
-                  </div>
-                </div>
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Регистрации</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
-                  </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">0</p>
-                    <p class="stat-delta stat-delta-warning">+0 с последнего обновления</p>
-                  </div>
-                </div>
-                <div class="stat-tile">
-                  <div class="stat-tile-top">
-                    <span>Депозиты</span>
-                    <div class="stat-icon"><img src="assets/icons/stat-arrows.png" alt=""></div>
-                  </div>
-                  <div class="stat-tile-data">
-                    <p class="stat-value">0</p>
-                    <p class="stat-delta stat-delta-warning">+0 с последнего обновления</p>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к инсталл</span>
+                    <span class="stat-sub-value">22.8%</span>
                   </div>
                 </div>
               </div>
 
+              <div class="stat-col">
+                <p class="stat-col-label">Инсталлы</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">62</span>
+                    <span class="stat-change stat-change-warning">+4</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к регам</span>
+                    <span class="stat-sub-value">15.2%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">Регистрации</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">62</span>
+                    <span class="stat-change stat-change-warning">+4</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к дету</span>
+                    <span class="stat-sub-value">6.8%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">Депозиты</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">14</span>
+                    <span class="stat-change stat-change-warning">+0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: критично, инсталлы перестали фиксироваться -->
+          <div class="card card-highlight card-danger card-detail-v2">
+            <div class="card-v2-toprow">
+              <div class="card-highlight-header">
+                <h3 class="card-highlight-title">Bestjoocker-wheel.com</h3>
+                <div class="subdomain-info">
+                  <div class="subdomain-label">
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/pwa-subtract.svg" alt="">
+                      <span>Royal Jocker</span>
+                    </div>
+                    <div class="subdomain-item-lg">
+                      <img src="assets/icons/geo-pin.svg" alt="">
+                      <span>GEO: UK,GB,AU,ML</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="traffic-info">
+                  <span class="traffic-active">Траффик активен 46ч 22мин</span>
+                  <span class="traffic-start">Начало: 15:48 06.08.2026</span>
+                </div>
+              </div>
+
+              <div class="card-v2-actions">
+                <button class="btn-support-link">
+                  <img src="assets/icons/support-icon.svg" alt="">
+                  <span>Связаться с поддержкой</span>
+                </button>
+                <button class="btn-secondary-stat">Подробная статистика</button>
+              </div>
+            </div>
+
+            <div class="stats-row">
+              <div class="status-panel status-panel-danger">
+                <img src="assets/icons/info-error.svg" alt="" class="status-panel-icon">
+                <p class="status-panel-title">Инсталлы перестали фиксироваться</p>
+                <p class="status-panel-text">С 14:20 — 37 минут назад<br>За это время 312 кликов, 0 установок</p>
+                <p class="status-panel-text status-panel-text-muted">Возможные причины:<br>Сломалась интеграция и постбэки не приходят в трекер<br>Сломалась интеграция и постбэки не приходят в Click Kings<br>Ошибки при регистрации на стороне рекла</p>
+                <p class="status-panel-text status-panel-text-muted">Что проверить:<br>Есть ли регистрации в трекере<br>Есть ли регистрации у рекла</p>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">Клики</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">312</span>
+                    <span class="stat-change stat-change-ok">+20</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к PWA</span>
+                    <span class="stat-sub-value">80%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">PWA показы</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">280</span>
+                    <span class="stat-change stat-change-ok">+25</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Whitepage</span>
+                    <span class="stat-sub-value">20%</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к инсталл</span>
+                    <span class="stat-sub-value">22.8%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col stat-col-danger">
+                <p class="stat-col-label">Инсталлы</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">0</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к регам</span>
+                    <span class="stat-sub-value">0%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">Регистрации</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">0</span>
+                  </div>
+                  <div class="stat-sub">
+                    <span class="stat-sub-label">Переходы к дету</span>
+                    <span class="stat-sub-value">0%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-col">
+                <p class="stat-col-label">Депозиты</p>
+                <div class="stat-col-body">
+                  <div class="stat-value-row">
+                    <span class="stat-value-v2">0</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
